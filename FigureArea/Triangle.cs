@@ -1,4 +1,6 @@
-﻿namespace FigureArea;
+﻿using FigureArea.Infrastructure;
+
+namespace FigureArea;
 
 public class Triangle : IAreaFigure
 {
@@ -16,7 +18,9 @@ public class Triangle : IAreaFigure
 
         var halfPerimetr = Sides.Sum() / 2;
 
-        return Math.Sqrt(halfPerimetr * (halfPerimetr - Sides[0]) * (halfPerimetr - Sides[1]) * (halfPerimetr - Sides[2]));
+        var area = Math.Sqrt(halfPerimetr * (halfPerimetr - Sides[0]) * (halfPerimetr - Sides[1]) * (halfPerimetr - Sides[2]));
+
+        return area.ToAreaFormat();
     }
 
     public bool IsRectangular()
