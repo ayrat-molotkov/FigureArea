@@ -2,6 +2,10 @@
 
 public class Circle : IAreaFigure
 {
+    public Circle(double radius)
+    {
+        Radius = radius;
+    }
     public double Radius { get; set; }
     public double GetArea()
     {
